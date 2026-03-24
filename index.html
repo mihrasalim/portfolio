@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mihras Salim | DevOps Student</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* ---------- Body & Font ---------- */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f1e0f, #1a3a1a);
+      color: #e6ffe6;
+      overflow-x: hidden;
+    }
+
+    /* ---------- Fade-in Animation ---------- */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ---------- Header ---------- */
+    header {
+      text-align: center;
+      padding: 80px 20px 40px 20px;
+    }
+
+    header h1 {
+      font-size: 3em;
+      color: #00ff66;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00ff66; }
+      to { text-shadow: 0 0 25px #00ff99, 0 0 35px #00ff99; }
+    }
+
+    header p {
+      font-size: 1.3em;
+      color: #b3ffb3;
+      border-right: 3px solid #00ff66;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 3s steps(30, end) forwards, blink 0.7s infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    /* ---------- Container ---------- */
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* ---------- Card Styles ---------- */
+    .card {
+      background: #0a2a0a;
+      padding: 25px;
+      margin: 20px 0;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,255,102,0.3);
+      transition: 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 20px 40px rgba(0,255,102,0.5);
+    }
+
+    h2 {
+      color: #00ff66;
+    }
+
+    /* ---------- Skills ---------- */
+    .skills span {
+      display: inline-block;
+      background: #004d00;
+      padding: 8px 15px;
+      margin: 5px;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+
+    .skills span:hover {
+      background: #00ff66;
+      color: #000;
+      transform: scale(1.2);
+    }
+
+    /* ---------- Button ---------- */
+    button {
+      background: #00ff66;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1em;
+      color: #000;
+      margin-top: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Ripple effect */
+    button::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      background: rgba(255,255,255,0.4);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      transition: width 0.5s, height 0.5s;
+    }
+
+    button:active::after {
+      width: 200px;
+      height: 200px;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #99ff99;
+      font-size: 0.9em;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header class="fade-in">
+  <h1>Mihras Salim</h1>
+  <p>DevOps Student @ Synnefo Solution</p>
+</header>
+
+<div class="container">
+
+  <div class="card fade-in" style="animation-delay:0.3s">
+    <h2>About Me</h2>
+    <p>
+      I am Mihras Salim, a DevOps student passionate about automation,
+      cloud computing, and building scalable, efficient systems.
+    </p>
+  </div>
+
+  <div class="card fade-in" style="animation-delay:0.6s">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>Linux</span>
+      <span>Docker</span>
+      <span>Kubernetes</span>
+      <span>AWS</span>
+      <span>CI/CD</span>
+      <span>Node.js</span>
+      <span>Git</span>
+    </div>
+  </div>
+
+  <div class="card fade-in" style="animation-delay:0.9s">
+    <h2>Projects</h2>
+    <p>Click the button to see a DevOps tip 👇</p>
+    <button onclick="showMessage()">Click Me</button>
+    <p id="message"></p>
+  </div>
+
+</div>
+
+<footer class="fade-in" style="animation-delay:1.2s">
+  © 2026 Mihras Salim | DevOps Portfolio
+</footer>
+
+<script>
+  function showMessage() {
+    const msg = document.getElementById("message");
+    msg.innerText = "🚀 DevOps = Automation + CI/CD + Cloud + Monitoring!";
+    msg.style.opacity = 0;
+    setTimeout(() => {
+      msg.style.transition = "opacity 0.5s";
+      msg.style.opacity = 1;
+    }, 100);
+  }
+</script>
+
+</body>
+</html>
